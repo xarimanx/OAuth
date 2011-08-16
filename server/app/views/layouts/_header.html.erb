@@ -1,11 +1,13 @@
 <header>
   <nav class="round">
     <ul>
-      <#% if signed_in? %>
-      <li>Loggin as <%#= link_to current_user.email+" [Sign out]", destroy_user_session_path, :method => :delete %></li>
-      <%# else %>
-      <li><%#= link_to "Sign in", new_user_session_path %></li>
-      <%# end %>
+      <% if signed_in? %>
+      <li><%= link_to "Profile", current_user %></li>
+      <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+      <li>  Loggin as <%= link_to current_user.email+"[Sign out]", signout_path, :method => :delete %></li>
+      <% else %>
+      <li><%= link_to "Sign in", signin_path %></li>
+      <% end %>
     </ul>
   </nav>
 </header>

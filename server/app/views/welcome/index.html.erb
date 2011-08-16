@@ -1,10 +1,9 @@
-  <% if #signed_in? %>
+  <% if signed_in? %>
   <table class="front" summary="For signed-in users">
     <tr>
       <td class="main">
-        <h1 class="questions">What's up? </h1> <%#= current_user.email %></br>        
-		<%#= render 'shared/question_form' %>
-        <%#= render 'shared/feed' %>    
+        <h1 class="questions">What's up? </h1> <%= current_user.email %></br>
+        
       </td>
       <td class="sidebar round">
         <%#= render 'shared/user_info' %>
@@ -16,5 +15,5 @@
   <p>
     Pet App wed Page!
   </p>
-  <%= link_to "Sign up now!", signup_pat, :class => "signup_button round" %>
+  <%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
 <% end %>
